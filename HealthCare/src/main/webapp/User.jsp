@@ -2,16 +2,16 @@
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="com.HospitalManagement.Hospital"%> 
-<%@page import="com.HospitalManagement.HospitalRepository"%> 
+<%@page import="com.paf.HealthCare.MyResources"%> 
+<%@page import="com.UserManagement.UserRepository"%> 
 
-<% ArrayList HospitalDetails =(ArrayList)request.getAttribute("HospitalDetails"); %>
+<% ArrayList UserDetails =(ArrayList)request.getAttribute("UserDetails"); %>
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Hospital</title>
+<title>User</title>
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 <script src="Componets/jquery-3.3.1.min.js"></script>
 <script src="Componets/main.js"></script>
@@ -22,19 +22,19 @@
 		<div class="row">
 			<div class="col-5">
 
-				<h1 class="m-3">Hospital details</h1>
+				<h1 class="m-3">User details</h1>
 
-				<form id="formHospital" name="formHospital" method="post" action="Hospital.jsp">
-							 Hospital Id:
-							<input id="hospitalid" name="hospitalid" type="text"
+				<form id="formUser" name="formUser" method="post" action="User.jsp">
+							 User Id:
+							<input id="Userid" name="Userid" type="text"
 							 class="form-control form-control-sm">
-							<br> Hospital Name:
+							<br> User Name:
 							<input id="name" name="name" type="text"
 							 class="form-control form-control-sm">
 							<br> Address:
 							<input id="address" name="address" type="text"
 							 class="form-control form-control-sm">
-							<br> Hospital Charge:
+							<br> User Charge:
 							<input id="charge" name="charge" type="text"
 							 class="form-control form-control-sm">
 							 <br> Phone Number:
@@ -57,15 +57,15 @@
 				
 				<br>
 				<%
-				//	HospitalRepository hospitalObj = new HospitalRepository();
-				//	out.print(hospitalObj.viewHospital());
+				//	UserRepository UserObj = new UserRepository();
+				//	out.print(UserObj.viewUser());
 				%>
 				<br>
 			
 				<table class="table table-dark">
 					
 				 	<tr>
-					<th>Hospital ID</th>
+					<th>User ID</th>
 					<th>Name</th>
 					<th>Address</th>
 					<th>Charge</th>
@@ -75,12 +75,12 @@
 					<th>Remove</th>
 					</tr>
 					 
-					<% for(int i=0; i<HospitalDetails.size(); i++){ %>
-					<% Hospital hos = (Hospital)HospitalDetails.get(i); %>
+					<% for(int i=0; i<UserDetails.size(); i++){ %>
+					<% User hos = (User)UserDetails.get(i); %>
 					 
 								
 						<tr>
-						    <td><%=hos.getHospitalid()%></td>
+						    <td><%=hos.getUserid()%></td>
 							<td><%=hos.getName()%></td>
 							<td><%=hos.getAddress()%></td>
 							<td><%=hos.getCharge()%></td>
@@ -100,7 +100,7 @@
 		<br>
 		
 		<div class="row">
-					<div class="col-12" id="colHospital"></div>
+					<div class="col-12" id="colUser"></div>
 		</div>
 		
 		
